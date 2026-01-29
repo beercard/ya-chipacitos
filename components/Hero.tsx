@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-brand-yellow px-4 py-1 rounded-full mb-6 font-hand font-outline font-bold tracking-widest text-2xl uppercase text-brand-yellow"
+          className="inline-block text-brand-yellow px-4 py-1 rounded-full mb-6 font-hand text-pop-sm font-bold tracking-widest text-3xl md:text-5xl uppercase text-brand-yellow mt-4 block"
         >
           La auténtica receta correntina
         </motion.div>
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-9xl font-display font-outline-xl font-bold mb-8 drop-shadow-2xl leading-none tracking-wide"
+          className="text-5xl md:text-7xl lg:text-9xl font-display text-pop font-bold text-6xl md:text-8xl lg:text-9xl mb-8 drop-shadow-2xl leading-none tracking-wide"
         >
           NO LO PIENSES MÁS...<br/>
           <span className="text-brand-yellow">PEDÍ AHORA...</span>

@@ -56,7 +56,7 @@ export default function Locations() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-display font-outline text-brand-yellow text-center mb-12 transform -rotate-1"
+          className="text-5xl md:text-7xl font-display text-pop text-center mb-12 transform -rotate-1"
         >
           Nuestros Locales
         </motion.h2>

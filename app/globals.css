@@ -117,3 +117,48 @@ body {
   paint-order: stroke fill;
   text-shadow: 4px 4px 0px #000;
 }
+
+/* Pop Art / Sticker Styles */
+.text-pop {
+  color: #FFFFFF;
+  -webkit-text-stroke: 4px #000000;
+  text-stroke: 4px #000000;
+  paint-order: stroke fill;
+  text-shadow: 6px 6px 0px #000000;
+}
+
+.text-pop-sm {
+  color: #FFFFFF;
+  -webkit-text-stroke: 2px #000000;
+  text-stroke: 2px #000000;
+  paint-order: stroke fill;
+  text-shadow: 3px 3px 0px #000000;
+}
+
+.bg-pattern-dots {
+  background-color: #D7320F;
+  background-image: radial-gradient(#F0C828 20%, transparent 20%);
+  background-size: 20px 20px;
+}
+
+.sticker-badge {
+  background-color: #F0C828;
+  color: #000000;
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+  transform: rotate(-3deg);
+  transition: transform 0.2s;
+}
+
+.sticker-badge:hover {
+  transform: rotate(0deg) scale(1.1);
+}
+
+.sticker-pill {
+  background-color: #FFFFFF;
+  border: 3px solid #000000;
+  border-radius: 9999px;
+  box-shadow: 4px 4px 0px #000000;
+  font-weight: bold;
+  text-transform: uppercase;
+}
