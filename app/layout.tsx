@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, Montserrat } from "next/font/google";
+import { Luckiest_Guy, Gloria_Hallelujah, Quicksand } from "next/font/google";
 import "./globals.css";
 
-const bebas = Bebas_Neue({
-  variable: "--font-bebas",
+const marvin = Luckiest_Guy({
+  variable: "--font-marvin",
   weight: "400",
   subsets: ["latin"],
 });
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const skippy = Gloria_Hallelujah({
+  variable: "--font-skippy",
+  weight: "400",
+  subsets: ["latin"],
+});
+
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
   subsets: ["latin"],
 });
 
@@ -24,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Ya! Chipacitos",
     images: [
       {
-        url: "https://yachipacitos.com/images/hero/1.jpg", // Assuming this will be the URL
+        url: "https://yachipacitos.com/images/hero/1.jpg",
         width: 1200,
         height: 630,
       },
@@ -50,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${bebas.variable} ${montserrat.variable} antialiased font-body`}
+        className={`${marvin.variable} ${skippy.variable} ${quicksand.variable} antialiased font-body`}
       >
         
         <script

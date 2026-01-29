@@ -14,12 +14,19 @@
   --color-brand-yellow: var(--brand-yellow);
   --color-brand-red: var(--brand-red);
   --color-brand-black: var(--brand-black);
-  --font-display: var(--font-bebas);
-  --font-body: var(--font-montserrat);
+  --font-display: var(--font-marvin);
+  --font-body: var(--font-quicksand);
+  --font-hand: var(--font-skippy);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
+}
+
+.font-outline {
+  -webkit-text-stroke: 2px #000;
+  text-stroke: 2px #000;
+  paint-order: stroke fill;
 }
