@@ -13,7 +13,15 @@ export default function Footer() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-display text-brand-yellow mb-4">YA! CHIPACITOS</h3>
+            <div className="mb-6 flex justify-center md:justify-start">
+              <Image 
+                src="/images/logos/logo-ya-chipacitos.png" 
+                alt="Ya! Chipacitos" 
+                width={200} 
+                height={80} 
+                className="h-16 w-auto object-contain" 
+              />
+            </div>
             <p className="text-gray-300">Pasión por productos auténticos.</p>
           </motion.div>
           
