@@ -56,7 +56,7 @@ export default function Locations() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-display text-center mb-12 text-brand-black"
+          className="text-4xl md:text-6xl font-display font-outline text-brand-yellow text-center mb-12 transform -rotate-1"
         >
           Nuestros Locales
         </motion.h2>
@@ -69,7 +69,7 @@ export default function Locations() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-gray-50 rounded-xl p-4 md:p-6 hover:shadow-lg transition-shadow border border-gray-100 flex flex-col h-full"
+              className="bg-white rounded-xl p-4 md:p-6 neobrutal-card border-none flex flex-col h-full"
             >
               <div className="h-32 md:h-48 bg-gray-200 rounded-lg mb-4 overflow-hidden relative shrink-0">
                 <Image 
@@ -95,7 +95,7 @@ export default function Locations() {
                 href={loc.mapLink} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full bg-brand-yellow/20 text-brand-black font-bold py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-brand-yellow transition-colors text-sm md:text-base mt-auto"
+                className="w-full bg-brand-yellow text-black neobrutal-button font-bold py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-brand-yellow transition-colors text-sm md:text-base mt-auto"
               >
                 <Navigation size={16} />
                 Cómo llegar

@@ -25,8 +25,88 @@ body {
   font-family: var(--font-body);
 }
 
+/* Typography Utilities */
 .font-outline {
   -webkit-text-stroke: 2px #000;
   text-stroke: 2px #000;
   paint-order: stroke fill;
+  text-shadow: 3px 3px 0px #000;
+}
+
+.font-outline-sm {
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  paint-order: stroke fill;
+  text-shadow: 2px 2px 0px #000;
+}
+
+/* Neo-Brutalism Utilities */
+.neobrutal-shadow {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.neobrutal-shadow-lg {
+  box-shadow: 8px 8px 0px #000000;
+}
+
+.neobrutal-border {
+  border: 3px solid #000000;
+}
+
+.neobrutal-card {
+  border: 3px solid #000000;
+  box-shadow: 6px 6px 0px #000000;
+  transition: all 0.2s ease;
+}
+
+.neobrutal-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #000000;
+}
+
+.neobrutal-button {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.1s ease;
+}
+
+.neobrutal-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.neobrutal-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+/* Sticker Effect */
+.sticker {
+  filter: drop-shadow(0px 4px 0px rgba(0,0,0,0.2));
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sticker:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
 }

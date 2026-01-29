@@ -10,7 +10,7 @@ export default function News() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-display text-center mb-12 text-brand-black"
+          className="text-4xl md:text-6xl font-display font-outline text-brand-yellow text-center mb-12 transform rotate-1"
         >
           Novedades y Expansión
         </motion.h2>
@@ -20,7 +20,7 @@ export default function News() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="h-[400px] bg-gray-300 rounded-2xl overflow-hidden relative shadow-xl"
+            className="h-[400px] bg-gray-300 rounded-2xl overflow-hidden relative neobrutal-shadow-lg border-4 border-black"
           >
             <Image 
               src="/images/news/banner.jpg" 
@@ -43,25 +43,25 @@ export default function News() {
               ¡Se viene algo grande! Estamos trabajando en nuestro nuevo centro de producción y sistema de franquicias.
               Queremos llevar el sabor de Ya! Chipacitos a todo el país.
             </p>
-            <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-red">
+            <div className="bg-white p-8 rounded-xl neobrutal-card">
               <h4 className="text-xl font-bold mb-4">Interesados en Franquicias / Mayorista</h4>
               <form className="space-y-4">
                 <div>
                   <label className="block text-sm font-bold mb-1">Nombre Completo</label>
-                  <input type="text" className="w-full border border-gray-300 rounded p-2" placeholder="Tu nombre" />
+                  <input type="text" className="w-full border-2 border-black rounded p-2 font-bold" placeholder="Tu nombre" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold mb-1">Contacto (Tel/Email)</label>
-                  <input type="text" className="w-full border border-gray-300 rounded p-2" placeholder="Tu contacto" />
+                  <input type="text" className="w-full border-2 border-black rounded p-2 font-bold" placeholder="Tu contacto" />
                 </div>
                 <div>
                   <label className="block text-sm font-bold mb-1">Interés</label>
-                  <select className="w-full border border-gray-300 rounded p-2">
+                  <select className="w-full border-2 border-black rounded p-2 font-bold">
                     <option>Franquicia</option>
                     <option>Compra Mayorista</option>
                   </select>
                 </div>
-                <button type="submit" className="w-full bg-brand-black text-white font-bold py-3 rounded hover:bg-gray-800 transition-colors">
+                <button type="submit" className="w-full bg-black text-white font-bold py-3 rounded neobrutal-button hover:bg-gray-900 transition-colors">
                   ENVIAR CONSULTA
                 </button>
               </form>

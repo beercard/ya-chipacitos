@@ -20,7 +20,7 @@ export default function Products() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-display text-center mb-12 text-brand-black"
+          className="text-4xl md:text-6xl font-display font-outline text-brand-yellow text-center mb-12 transform rotate-1"
         >
           Tentate Acá
         </motion.h2>
@@ -33,7 +33,7 @@ export default function Products() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow group"
+              className="bg-white rounded-xl overflow-hidden neobrutal-card group"
             >
               <div className="h-32 md:h-64 bg-gray-200 relative overflow-hidden">
                  <Image 
@@ -47,7 +47,7 @@ export default function Products() {
               </div>
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-2xl font-bold font-display mb-1 md:mb-2 leading-tight">{item.title}</h3>
-                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2">Deliciosos y calentitos.</p>
+                <p className="text-sm md:text-lg text-black font-hand mb-2 md:mb-4 line-clamp-2">Deliciosos y calentitos.</p>
               </div>
             </motion.div>
           ))}
@@ -59,7 +59,7 @@ export default function Products() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-20 bg-brand-red rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden shadow-2xl"
+          className="mt-20 bg-brand-red rounded-3xl p-8 md:p-12 neobrutal-shadow-lg border-4 border-black text-center text-white relative overflow-hidden shadow-2xl"
         >
           <div className="relative z-10">
             <h3 className="text-3xl md:text-6xl font-display font-bold mb-6">¿TE QUEDASTE CON GANAS?</h3>
@@ -68,7 +68,7 @@ export default function Products() {
               href="https://web.pedisy.com/tiendas/ya-chipacitos" 
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-brand-yellow text-brand-black font-bold text-lg md:text-xl px-10 py-4 rounded-full hover:bg-white transition-colors shadow-lg"
+              className="inline-block bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg md:text-xl px-10 py-4 rounded-full hover:bg-white transition-colors shadow-lg"
             >
               PEDILO YA!
             </a>

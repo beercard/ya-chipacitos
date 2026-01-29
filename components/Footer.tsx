@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Footer() {
   return (
-    <footer id="contacto" className="bg-brand-black text-white py-12">
+    <footer id="contacto" className="bg-black border-t-4 border-black text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           <motion.div
@@ -31,7 +31,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h3 className="text-xl font-display text-brand-yellow mb-4">CONTACTO</h3>
+            <h3 className="text-2xl font-display text-brand-yellow mb-4 font-outline-sm">CONTACTO</h3>
             <ul className="space-y-3">
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <Phone size={18} className="text-brand-red" />
@@ -54,7 +54,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
           >
-            <h3 className="text-xl font-display text-brand-yellow mb-4">MEDIOS DE PAGO</h3>
+            <h3 className="text-2xl font-display text-brand-yellow mb-4 font-outline-sm">MEDIOS DE PAGO</h3>
             <p className="text-gray-300 mb-4">Aceptamos todos los medios de pago.</p>
             <div className="grid grid-cols-3 gap-4 bg-white/10 p-4 rounded-lg max-w-[200px] mx-auto md:mx-0">
                <div className="flex items-center justify-center bg-white rounded p-1 h-10 w-full">
