@@ -17,7 +17,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-brand-red shadow-md py-2' : 'bg-brand-red/95 backdrop-blur-md py-4'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled || isOpen ? 'bg-brand-red shadow-md py-2' : 'bg-brand-red/95 backdrop-blur-md py-4'}`}>
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/" className="hover:scale-105 transition-transform">
           <Image 
