@@ -110,3 +110,10 @@ body {
 .animate-marquee {
   animation: marquee 20s linear infinite;
 }
+
+.font-outline-xl {
+  -webkit-text-stroke: 4px #000;
+  text-stroke: 4px #000;
+  paint-order: stroke fill;
+  text-shadow: 4px 4px 0px #000;
+}
