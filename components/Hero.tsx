@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   const slides = [
-    { id: 1, image: '/images/hero/YA-CHIPACITOS.jpeg', text: 'Chipacitos Calentitos' },
+    { id: 1, image: '/images/hero/hero-main.jpg', text: 'Chipacitos Calentitos' },
     { id: 2, image: '/images/hero/2.jpg', text: 'Sabor Irresistible' },
     { id: 3, image: '/images/hero/3.jpg', text: 'Pedilo Ahora' },
   ];
