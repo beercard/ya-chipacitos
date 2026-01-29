@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="inline-block text-brand-yellow px-4 py-1 rounded-full mb-6 font-hand text-pop-sm font-bold tracking-widest text-3xl md:text-5xl uppercase text-brand-yellow mt-4 block"
+          className="inline-block sticker-badge px-6 py-2 mb-8 font-hand text-lg md:text-2xl uppercase tracking-widest rotate-2 text-brand-black"
         >
           La auténtica receta correntina
         </motion.div>
@@ -55,7 +55,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl lg:text-9xl font-display text-pop font-bold text-6xl md:text-8xl lg:text-9xl mb-8 drop-shadow-2xl leading-none tracking-wide"
+          className="text-5xl md:text-7xl lg:text-9xl font-display text-pop font-bold mb-8 drop-shadow-2xl leading-tight md:leading-none tracking-wide break-words"
         >
           NO LO PIENSES MÁS...<br/>
           <span className="text-brand-yellow">PEDÍ AHORA...</span>
@@ -65,12 +65,12 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-6 mt-10"
+          className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-10 w-full px-4"
         >
-          <a href="tel:+5493794658997" className="w-full md:w-auto bg-white text-brand-black font-bold py-4 px-8 rounded-full hover:bg-gray-200 transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
+          <a href="tel:+5493794658997" className="w-full max-w-sm md:w-auto bg-white text-brand-black font-bold py-4 px-8 rounded-full hover:bg-gray-200 transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center gap-2">
             <span>📞</span> +54 9 379 465 8997
           </a>
-          <a href="https://web.pedisy.com/tiendas/ya-chipacitos" target="_blank" className="w-full md:w-auto bg-brand-red text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-600 transition-all transform hover:-translate-y-1 hover:shadow-brand-red/50 shadow-xl animate-pulse flex items-center justify-center gap-2">
+          <a href="https://web.pedisy.com/tiendas/ya-chipacitos" target="_blank" className="w-full max-w-sm md:w-auto bg-brand-red text-white font-bold py-4 px-10 rounded-full text-xl hover:bg-red-600 transition-all transform hover:-translate-y-1 hover:shadow-brand-red/50 shadow-xl animate-pulse flex items-center justify-center gap-2">
             <span>🍕</span> HACER PEDIDO ONLINE
           </a>
         </motion.div>
