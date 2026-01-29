@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-brand-black">
+      <div className="absolute inset-0 z-0 bg-brand-black">
         <Swiper
           modules={[Autoplay, EffectFade]}
           effect="fade"
