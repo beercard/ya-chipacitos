@@ -36,6 +36,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: '/images/logos/logo-ya-chipacitos.png',
+    apple: '/images/logos/logo-ya-chipacitos.png',
+  },
 };
 
 export default function RootLayout({
