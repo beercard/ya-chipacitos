@@ -43,7 +43,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center justify-center md:justify-start gap-2">
                 <Instagram size={18} className="text-brand-red" />
-                <a href="https://instagram.com" target="_blank" className="hover:text-brand-yellow transition-colors">Seguinos en Instagram</a>
+                <a href="https://www.instagram.com/yachipacitos/" target="_blank" className="hover:text-brand-yellow transition-colors">Seguinos en Instagram</a>
               </li>
             </ul>
           </motion.div>

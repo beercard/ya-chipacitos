@@ -37,7 +37,7 @@ export default function Header() {
           <Link href="#productos" className="hover:text-brand-yellow transition-colors">PRODUCTOS</Link>
           <Link href="#locales" className="hover:text-brand-yellow transition-colors">LOCALES</Link>
           <Link href="#contacto" className="hover:text-brand-yellow transition-colors">CONTACTO</Link>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="bg-white text-brand-red p-2 rounded-full hover:bg-brand-yellow hover:text-brand-black transition-all transform hover:rotate-12">
+          <a href="https://www.instagram.com/yachipacitos/" target="_blank" rel="noopener noreferrer" className="bg-white text-brand-red p-2 rounded-full hover:bg-brand-yellow hover:text-brand-black transition-all transform hover:rotate-12">
             <Instagram size={20} />
           </a>
         </div>
@@ -70,7 +70,7 @@ export default function Header() {
         </div>
 
         <div className="mt-auto p-8">
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-brand-red font-bold bg-white p-4 rounded-xl hover:bg-brand-yellow transition-colors shadow-lg">
+          <a href="https://www.instagram.com/yachipacitos/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-brand-red font-bold bg-white p-4 rounded-xl hover:bg-brand-yellow transition-colors shadow-lg">
             <Instagram size={24} />
             <span>Seguinos en Instagram</span>
           </a>
