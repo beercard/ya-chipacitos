@@ -5,11 +5,42 @@ import { motion } from 'framer-motion';
 
 export default function Products() {
   const products = [
-    { id: 1, image: '/images/products/Chipacitos Clasicos.jpeg', title: 'Chipacitos Clásicos' },
-    { id: 2, image: '/images/products/Chipa Sandwich.jpeg', title: 'Chipá Sándwich' },
-    { id: 3, image: '/images/products/Chipá Saborizado.jpeg', title: 'Chipá Saborizado' },
-    { id: 4, image: '/images/products/Chipá XXL.jpeg', title: 'Chipá XXL' },
-    { id: 5, image: '/images/products/Chipás CONGELADOS.jpeg', title: 'Chipás Congelados' },
+    { 
+      id: 1, 
+      image: '/images/products/Chipacitos Clasicos.jpeg', 
+      title: 'Chipacitos Clásicos',
+      description: 'Ricos y calentitos para todos los días'
+    },
+    { 
+      id: 2, 
+      image: '/images/products/Chipá Saborizado.jpeg', 
+      title: 'Chipá Saborizado',
+      description: 'Los aliados de tus picadas.'
+    },
+    { 
+      id: 3, 
+      image: '/images/products/Chipá XXL.jpeg', 
+      title: 'Chipá XXL',
+      description: 'Una explosión de auténtico sabor correntino'
+    },
+    { 
+      id: 4, 
+      image: '/images/products/Chipa Sandwich.jpeg', 
+      title: 'Chipandwich',
+      description: 'La combinación perfecta entre dos grandes'
+    },
+    { 
+      id: 5, 
+      image: '/images/products/Chipánada.jpeg', 
+      title: 'Chipanada',
+      description: 'Una Edición Limitada sólo para festejar nuestra Patria'
+    },
+    { 
+      id: 6, 
+      image: '/images/products/Chipáncho.jpeg', 
+      title: 'Chipancho',
+      description: 'Edición Limitada para festejar lo que vos quieras'
+    },
   ];
 
   return (
@@ -46,7 +77,7 @@ export default function Products() {
               </div>
               <div className="p-4 md:p-6">
                 <h3 className="text-lg md:text-2xl font-bold font-display mb-1 md:mb-2 leading-tight">{item.title}</h3>
-                <p className="text-sm md:text-lg text-black font-hand mb-2 md:mb-4 line-clamp-2">Deliciosos y calentitos.</p>
+                <p className="text-sm md:text-lg text-black font-hand mb-2 md:mb-4 line-clamp-2">{item.description}</p>
               </div>
             </motion.div>
           ))}
@@ -61,7 +92,7 @@ export default function Products() {
           className="mt-20 bg-brand-red rounded-3xl p-8 md:p-12 neobrutal-shadow-lg border-4 border-black text-center text-white relative overflow-hidden shadow-2xl"
         >
           <div className="relative z-10">
-            <h3 className="text-3xl md:text-6xl font-display font-bold mb-6">¿TE QUEDASTE CON GANAS?</h3>
+            <h3 className="text-3xl md:text-6xl font-display font-bold mb-6 font-outline text-brand-yellow">¿TE QUEDASTE CON GANAS?</h3>
             <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">No esperes más. Hacé tu pedido ahora y recibilo calentito en tu casa.</p>
             <a 
               href="https://web.pedisy.com/tiendas/ya-chipacitos" 

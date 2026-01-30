@@ -8,7 +8,7 @@ export default function StickyCTA() {
         href="https://web.pedisy.com/tiendas/ya-chipacitos" 
         target="_blank"
         rel="noopener noreferrer"
-        className="bg-brand-red text-white font-display text-xl px-6 py-3 rounded-full shadow-lg hover:bg-red-700 transition-transform hover:scale-105 border-2 border-white flex items-center gap-2"
+        className="bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg px-6 py-3 rounded-full shadow-lg hover:bg-white transition-colors border-2 border-black flex items-center gap-2"
       >
         🍕 PEDILO YA!
       </a>

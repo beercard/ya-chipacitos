@@ -23,7 +23,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-block bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg px-8 py-3 rounded-full hover:bg-white transition-colors shadow-lg"
             >
-              PEDIDOS YA
+              PEDILO YA!
             </a>
           </motion.div>
           
