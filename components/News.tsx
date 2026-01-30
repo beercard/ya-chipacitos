@@ -1,8 +1,48 @@
 "use client";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function News() {
+  const [formData, setFormData] = useState({
+    businessName: '',
+    contactPhone: '',
+  });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent, type: string) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, type }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ businessName: '', contactPhone: '' });
+        alert('¡Solicitud enviada con éxito! Nos pondremos en contacto pronto.');
+      } else {
+        setStatus('error');
+        alert('Hubo un error al enviar la solicitud. Por favor, intenta nuevamente.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('error');
+      alert('Hubo un error de conexión. Por favor, verifica tu conexión e intenta nuevamente.');
+    } finally {
+      setStatus('idle');
+    }
+  };
+
   const frozenStores = [
     { name: 'SABOR Y AROMA CORRIENTES', address: 'JUNIN 1672' },
     { name: 'PARCHES ALMACEN', address: 'AV MAIPU 802' },
@@ -50,6 +90,7 @@ export default function News() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            className="text-center md:text-left"
           >
             <h3 className="text-3xl md:text-4xl font-display font-bold mb-6 uppercase text-brand-red">
               NUEVO CENTRO DE PRODUCCION y SISTEMA DE FRANQUICIAS
@@ -87,24 +128,44 @@ export default function News() {
         <div className="grid md:grid-cols-2 gap-12 mb-20">
            <div className="bg-brand-black text-white p-8 rounded-xl neobrutal-shadow-lg border-4 border-brand-yellow relative overflow-hidden">
               <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold mb-6 text-brand-yellow uppercase">VENTA CORPORATIVA</h3>
-                <p className="text-lg mb-6">¿Tenés una empresa u oficina? Llevamos el mejor chipá para tus reuniones y eventos.</p>
-                <div className="flex items-center gap-4 text-xl font-bold">
+                <h3 className="text-3xl font-display font-bold mb-6 text-brand-yellow uppercase text-center md:text-left">VENTA CORPORATIVA</h3>
+                <p className="text-lg mb-6 text-center md:text-left">¿Tenés una empresa u oficina? Llevamos el mejor chipá para tus reuniones y eventos.</p>
+                <div className="flex items-center justify-center md:justify-start gap-4 text-xl font-bold">
                   <span>📞</span>
                   <a href="tel:+5493794658997" className="hover:text-brand-yellow transition-colors">+54 9 379 465 8997</a>
                 </div>
-                <p className="mt-2 text-gray-400 text-sm">Oficina Comercial</p>
+                <p className="mt-2 text-gray-400 text-sm text-center md:text-left">Oficina Comercial</p>
               </div>
            </div>
 
            <div className="bg-white p-8 rounded-xl neobrutal-card border-4 border-black">
-              <h3 className="text-3xl font-display font-bold mb-6 text-brand-black uppercase">VENTA MAYORISTA</h3>
-              <p className="text-lg mb-6 text-gray-700">Sumate a nuestra red de distribución. Consultanos por condiciones y precios.</p>
-              <form className="space-y-4">
-                <input type="text" className="w-full border-2 border-black rounded p-2 font-bold bg-gray-50" placeholder="Nombre de tu negocio" />
-                <input type="text" className="w-full border-2 border-black rounded p-2 font-bold bg-gray-50" placeholder="Teléfono de contacto" />
-                <button type="submit" className="w-full bg-brand-red text-white font-bold py-3 rounded neobrutal-button hover:bg-red-700 transition-colors uppercase">
-                  Solicitar Información
+              <h3 className="text-3xl font-display font-bold mb-6 text-brand-black uppercase text-center md:text-left">VENTA MAYORISTA</h3>
+              <p className="text-lg mb-6 text-gray-700 text-center md:text-left">Sumate a nuestra red de distribución. Consultanos por condiciones y precios.</p>
+              <form className="space-y-4" onSubmit={(e) => handleSubmit(e, 'Mayorista')}>
+                <input 
+                  type="text" 
+                  name="businessName"
+                  value={formData.businessName}
+                  onChange={handleInputChange}
+                  className="w-full border-2 border-black rounded p-2 font-bold bg-gray-50" 
+                  placeholder="Nombre de tu negocio" 
+                  required
+                />
+                <input 
+                  type="text" 
+                  name="contactPhone"
+                  value={formData.contactPhone}
+                  onChange={handleInputChange}
+                  className="w-full border-2 border-black rounded p-2 font-bold bg-gray-50" 
+                  placeholder="Teléfono de contacto" 
+                  required
+                />
+                <button 
+                  type="submit" 
+                  className="w-full bg-brand-red text-white font-bold py-3 rounded neobrutal-button hover:bg-red-700 transition-colors uppercase disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={status === 'loading'}
+                >
+                  {status === 'loading' ? 'Enviando...' : 'Solicitar Información'}
                 </button>
               </form>
            </div>
