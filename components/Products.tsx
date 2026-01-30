@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 
 export default function Products() {
   const products = [
-    { id: 1, image: '/images/products/1.jpg', title: 'Chipacitos Clásicos' },
-    { id: 2, image: '/images/products/2.jpg', title: 'Chipá Relleno' },
-    { id: 3, image: '/images/products/3.jpg', title: 'Chipá Sándwich' },
-    { id: 4, image: '/images/products/4.jpg', title: 'Criollitos' },
-    { id: 5, image: '/images/products/5.jpg', title: 'Facturas' },
-    { id: 6, image: '/images/products/6.jpg', title: 'Especiales' },
+    { id: 1, image: '/images/products/Chipacitos Clasicos.jpeg', title: 'Chipacitos Clásicos' },
+    { id: 2, image: '/images/products/Chipa Sandwich.jpeg', title: 'Chipá Sándwich' },
+    { id: 3, image: '/images/products/Chipá Saborizado.jpeg', title: 'Chipá Saborizado' },
+    { id: 4, image: '/images/products/Chipá XXL.jpeg', title: 'Chipá XXL' },
+    { id: 5, image: '/images/products/Chipás CONGELADOS.jpeg', title: 'Chipás Congelados' },
   ];
 
   return (

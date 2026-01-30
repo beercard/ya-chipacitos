@@ -10,42 +10,42 @@ export default function Locations() {
       address: "Hipólito Yrigoyen 956, W3400 Corrientes", 
       phone: "0379 4157715", 
       mapLink: "https://maps.app.goo.gl/do71BgqqNjqeteax6",
-      image: "/images/locations/1.jpg" 
+      image: "/images/locations/2.jpeg" 
     },
     { 
       name: "SUCURSAL PARAGUAY", 
       address: "Paraguay 388, W3402 Corrientes", 
       phone: "379 5084 247", 
       mapLink: "https://maps.app.goo.gl/7fPijNwZo74R7Qk76",
-      image: "/images/locations/2.jpg" 
+      image: "/images/locations/2.jpeg" 
     },
     { 
       name: "SUCURSAL CORDOBA", 
       address: "Córdoba 1533, W3400 Corrientes", 
       phone: "379 4344206", 
       mapLink: "https://maps.app.goo.gl/U8audVcWAaD5XAQv6",
-      image: "/images/locations/3.jpg" 
+      image: "/images/locations/3.PNG" 
     },
     { 
       name: "SUCURSAL SAN LORENZO", 
       address: "San Lorenzo 780, W3400 CFJ, Corrientes", 
       phone: "379 5195824", 
       mapLink: "https://maps.app.goo.gl/5XbFCvfmgBovM5hA7",
-      image: "/images/locations/4.jpg" 
+      image: "/images/locations/4.jpeg" 
     },
     { 
       name: "GOYA", 
       address: "José E. Gómez 544, W3450FZL Goya", 
       phone: "3777 640368", 
       mapLink: "https://maps.app.goo.gl/dvH1c4moRELMTKV97",
-      image: "/images/locations/1.jpg" 
+      image: "/images/locations/5.jpeg" 
     },
     { 
       name: "ITUIZANGO", 
       address: "Entre Ríos 2255, Ituzaingó, Corrientes", 
       phone: "3786 407068", 
       mapLink: "https://maps.app.goo.gl/rjg8a2K8mxqW63dv9",
-      image: "/images/locations/2.jpg" 
+      image: "/images/locations/6.jpeg" 
     },
   ];
 
