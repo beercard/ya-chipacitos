@@ -21,17 +21,17 @@ export default function About() {
             <div className="relative">
               <div className="absolute -left-[42px] top-0 bg-brand-red w-6 h-6 rounded-full border-4 border-black"></div>
               <h3 className="text-2xl font-bold text-brand-red mb-2">2019 - El Comienzo</h3>
-              <p className="text-gray-700 text-lg">Ricardo comienza este sueño con pasión y dedicación, buscando crear el chipá más rico de la ciudad.</p>
+              <p className="text-gray-700 text-lg">Ricardo comienza este sueño con pasión y dedicación, buscando crear el chipá más rico de la ciudad. Gracias a su espíritu innovador hoy ofrecemos productos de calidad.</p>
             </div>
             <div className="relative">
               <div className="absolute -left-[42px] top-0 bg-brand-yellow w-6 h-6 rounded-full border-4 border-black"></div>
               <h3 className="text-2xl font-bold text-brand-black mb-2">Pandemia - Resiliencia</h3>
-              <p className="text-gray-700 text-lg">A pesar de las dificultades, nos adaptamos y crecimos gracias al apoyo de nuestros clientes y el delivery.</p>
+              <p className="text-gray-700 text-lg">A pesar de las dificultades, nos adaptamos y crecimos con al apoyo de nuestros clientes. Hoy, Ya! Chipacitos combina tradición, innovación y una visión global.</p>
             </div>
             <div className="relative">
               <div className="absolute -left-[42px] top-0 bg-brand-red w-6 h-6 rounded-full border-4 border-black"></div>
               <h3 className="text-2xl font-bold text-brand-black mb-2">Actualidad - Expansión</h3>
-              <p className="text-gray-700 text-lg">Hoy contamos con múltiples sucursales y un equipo increíble, llevando sabor a cada rincón.</p>
+              <p className="text-gray-700 text-lg">Hoy contamos con sucursales y múltiples formatos de venta con un equipo increíble, llevando sabor a cada rincón.</p>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function About() {
           </div>
           <h2 className="text-4xl font-display mb-6">Nuestra Misión</h2>
           <p className="text-xl md:text-2xl font-medium max-w-3xl mx-auto">
-            "Pasión por productos auténticos, elaborados con los mejores ingredientes para brindar momentos de felicidad a nuestros clientes."
+            "En Ya! Chipacitos nos apasiona ofrecer productos auténticos y de alta calidad, elaborados con procesos de mejora continua. Nuestro compromiso es ser parte de tus momentos especiales, llevando el sabor y la tradición chipacera a tu mesa."
           </p>
         </div>
 

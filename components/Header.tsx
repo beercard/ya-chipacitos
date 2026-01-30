@@ -32,10 +32,10 @@ export default function Header() {
         
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8 font-bold text-white text-sm tracking-wide">
-          <Link href="#inicio" className="hover:text-brand-yellow transition-colors">INICIO</Link>
           <Link href="#nosotros" className="hover:text-brand-yellow transition-colors">NOSOTROS</Link>
           <Link href="#productos" className="hover:text-brand-yellow transition-colors">PRODUCTOS</Link>
           <Link href="#locales" className="hover:text-brand-yellow transition-colors">LOCALES</Link>
+          <Link href="#novedades" className="hover:text-brand-yellow transition-colors">NOVEDADES</Link>
           <Link href="#contacto" className="hover:text-brand-yellow transition-colors">CONTACTO</Link>
           <a href="https://www.instagram.com/yachipacitos/" target="_blank" rel="noopener noreferrer" className="bg-white text-brand-red p-2 rounded-full hover:bg-brand-yellow hover:text-brand-black transition-all transform hover:rotate-12">
             <Instagram size={20} />
@@ -62,10 +62,10 @@ export default function Header() {
         </div>
         
         <div className="flex flex-col px-8 space-y-6 font-display text-2xl text-white">
-          <Link href="#inicio" onClick={() => setIsOpen(false)} className="border-b border-white/10 pb-2 hover:pl-4 transition-all hover:text-brand-yellow">INICIO</Link>
           <Link href="#nosotros" onClick={() => setIsOpen(false)} className="border-b border-white/10 pb-2 hover:pl-4 transition-all hover:text-brand-yellow">NOSOTROS</Link>
           <Link href="#productos" onClick={() => setIsOpen(false)} className="border-b border-white/10 pb-2 hover:pl-4 transition-all hover:text-brand-yellow">PRODUCTOS</Link>
           <Link href="#locales" onClick={() => setIsOpen(false)} className="border-b border-white/10 pb-2 hover:pl-4 transition-all hover:text-brand-yellow">LOCALES</Link>
+          <Link href="#novedades" onClick={() => setIsOpen(false)} className="border-b border-white/10 pb-2 hover:pl-4 transition-all hover:text-brand-yellow">NOVEDADES</Link>
           <Link href="#contacto" onClick={() => setIsOpen(false)} className="border-b border-white/10 pb-2 hover:pl-4 transition-all hover:text-brand-yellow">CONTACTO</Link>
         </div>
 

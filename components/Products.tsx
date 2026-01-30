@@ -72,6 +72,9 @@ export default function Products() {
             >
               PEDILO YA!
             </a>
+            <p className="mt-6 text-xs md:text-sm font-medium opacity-80 uppercase tracking-wide">
+              CONSULTAR EL RADIO DE ENTREGA HABILITADO EN LA CIUDAD DE CORRIENTES.
+            </p>
           </div>
           <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2"></div>
           <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2"></div>
