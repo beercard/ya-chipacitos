@@ -27,6 +27,7 @@ export default function Hero() {
     { 
       id: 3, 
       image: '/images/hero/Portada 3.jpeg', 
+      pretitle: 'LA AUTÉNTICA RECETA CORRENTINA',
       copy1: 'No lo pienses mas..', 
       copy2: 'Pedí ahora…',
       cta: 'PEDIDOS YA',
@@ -61,13 +62,26 @@ export default function Hero() {
 
               {/* Content - No Blur */}
               <div className="relative z-20 container mx-auto px-4 text-center text-white mt-16 flex flex-col items-center justify-center h-full">
+                {slide.pretitle && (
+                   <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-6 transform -rotate-1"
+                   >
+                     <span className="inline-block bg-brand-yellow text-brand-black font-hand text-lg md:text-2xl px-6 py-2 border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wider">
+                       {slide.pretitle}
+                     </span>
+                   </motion.div>
+                )}
+
                 <motion.div 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
                   className="mb-0"
                 >
-                  <span className="text-4xl md:text-6xl lg:text-8xl font-display text-white font-bold block drop-shadow-2xl leading-tight tracking-wide break-words">
+                  <span className="text-3xl md:text-5xl lg:text-7xl font-display text-white font-bold block drop-shadow-2xl leading-tight tracking-wide break-words font-outline-black">
                     {slide.copy1}
                   </span>
                 </motion.div>
@@ -88,7 +102,7 @@ export default function Hero() {
                   className="mt-8"
                 >
                   <a href={slide.ctaLink} target="_blank" className="inline-block bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg md:text-xl px-10 py-4 rounded-full hover:bg-white transition-colors shadow-lg">
-                    <span>🍕</span> {slide.cta}
+                    {slide.cta}
                   </a>
                 </motion.div>
               </div>

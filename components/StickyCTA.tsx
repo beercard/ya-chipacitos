@@ -10,7 +10,7 @@ export default function StickyCTA() {
         rel="noopener noreferrer"
         className="bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg px-6 py-3 rounded-full shadow-lg hover:bg-white transition-colors border-2 border-black flex items-center gap-2"
       >
-        🍕 PEDILO YA!
+        PEDILO YA!
       </a>
     </div>
   );
