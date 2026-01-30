@@ -53,7 +53,7 @@ export default function Hero() {
                   alt={slide.copy2} 
                   fill
                   priority={slide.id === 1}
-                  className="object-cover opacity-60 blur-sm" 
+                  className="object-cover" 
                   sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-brand-black/30 via-transparent to-brand-black/60"></div>

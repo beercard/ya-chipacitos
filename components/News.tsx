@@ -39,17 +39,12 @@ export default function News() {
             className="h-[400px] bg-gray-300 rounded-2xl overflow-hidden relative neobrutal-shadow-lg border-4 border-black"
           >
             <Image 
-              src="/images/news/banner.jpg" 
+              src="/images/news/CORPORATIVA.jpeg" 
               alt="Nueva Obra" 
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <span className="text-white text-3xl font-display font-bold uppercase tracking-wider border-4 border-brand-yellow p-4 rounded bg-black/50 text-center">
-                Próximamente
-              </span>
-            </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 50 }}

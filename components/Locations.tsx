@@ -10,7 +10,7 @@ export default function Locations() {
       address: "Hipólito Yrigoyen 956, W3400 Corrientes", 
       phone: "0379 4157715", 
       mapLink: "https://maps.app.goo.gl/do71BgqqNjqeteax6",
-      image: "/images/locations/2.jpeg" 
+      image: "/images/locations/1.jpg" 
     },
     { 
       name: "SUCURSAL PARAGUAY", 
