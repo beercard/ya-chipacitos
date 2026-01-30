@@ -23,10 +23,11 @@ export default function Header() {
           <Image 
             src="/images/logos/logo-ya-chipacitos.png" 
             alt="Ya! Chipacitos" 
-            width={180} 
-            height={60} 
+            width={144} 
+            height={48} 
             className="h-12 w-auto object-contain" 
             priority
+            quality={80}
           />
         </Link>
         

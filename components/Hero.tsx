@@ -37,6 +37,20 @@ export default function Hero() {
 
   return (
     <section id="inicio" className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-black">
+      {/* LCP Optimization: Static First Image */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src={slides[0].image} 
+          alt={slides[0].copy2} 
+          fill
+          priority
+          className="object-cover" 
+          sizes="100vw"
+          quality={60}
+        />
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
       <Swiper
         modules={[Autoplay, EffectFade]}
         effect="fade"
@@ -56,6 +70,7 @@ export default function Hero() {
                   priority={slide.id === 1}
                   className="object-cover" 
                   sizes="100vw"
+                  quality={60}
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
               </div>

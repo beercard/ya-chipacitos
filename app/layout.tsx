@@ -19,6 +19,13 @@ const quicksand = Quicksand({
   subsets: ["latin"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#D7320F",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Ya! Chipacitos - El Mejor Chipá de Corrientes",
   description: "Disfrutá del auténtico sabor del chipá correntino. Chipacitos clásicos, rellenos, sándwiches y más. Envíos a domicilio y sucursales en todo Corrientes.",

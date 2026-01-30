@@ -70,9 +70,10 @@ export default function Products() {
                    src={item.image} 
                    alt={item.title} 
                    fill
-                   className="object-cover group-hover:scale-110 transition-transform duration-500" 
-                   sizes="(max-width: 768px) 50vw, 33vw"
-                 />
+                  className="object-cover group-hover:scale-110 transition-transform duration-500" 
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  quality={70}
+                />
                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
               </div>
               <div className="p-4 md:p-6">
