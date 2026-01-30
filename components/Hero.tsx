@@ -56,7 +56,7 @@ export default function Hero() {
                   className="object-cover" 
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-brand-black/30 via-transparent to-brand-black/60"></div>
+                <div className="absolute inset-0 bg-black/40"></div>
               </div>
 
               {/* Content - No Blur */}
@@ -65,9 +65,9 @@ export default function Hero() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="mb-2 md:mb-4"
+                  className="mb-0"
                 >
-                  <span className="font-hand text-2xl md:text-4xl lg:text-5xl text-white block drop-shadow-lg">
+                  <span className="text-4xl md:text-6xl lg:text-8xl font-display text-white font-bold block drop-shadow-2xl leading-tight tracking-wide break-words">
                     {slide.copy1}
                   </span>
                 </motion.div>
