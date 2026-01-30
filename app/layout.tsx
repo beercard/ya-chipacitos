@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: '/images/logos/logo-ya-chipacitos.png',
+    icon: '/favicon.ico',
     apple: '/images/logos/logo-ya-chipacitos.png',
   },
 };
