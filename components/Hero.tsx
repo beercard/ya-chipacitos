@@ -81,7 +81,7 @@ export default function Hero() {
                   transition={{ duration: 0.8 }}
                   className="mb-0"
                 >
-                  <span className="text-3xl md:text-5xl lg:text-7xl font-display text-white font-bold block drop-shadow-2xl leading-tight tracking-wide break-words font-outline-black">
+                  <span className="text-3xl md:text-5xl lg:text-7xl font-display text-white font-bold block drop-shadow-2xl leading-tight tracking-wide break-words font-outline">
                     {slide.copy1}
                   </span>
                 </motion.div>
