@@ -130,7 +130,7 @@ export default function News() {
            <div className="bg-brand-black text-white p-8 rounded-xl neobrutal-shadow-lg border-4 border-brand-yellow relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="text-3xl font-display font-bold mb-6 text-brand-yellow uppercase text-center md:text-left">VENTA CORPORATIVA</h3>
-                <p className="text-lg mb-6 text-center md:text-left">¿Querés tener en tus góndolas el mejor chipá? Llevá Ya! Chipacitos a tu negocio.</p>
+                <p className="text-lg mb-6 text-center md:text-left">¿Querés tener en tus góndolas el mejor chipá? Pedi Ya Chipacitos y vende en tu negocio.</p>
                 <div className="flex items-center justify-center md:justify-start gap-4 text-xl font-bold">
                   <span>📞</span>
                   <a href="tel:+5493794658997" className="hover:text-brand-yellow transition-colors">+54 9 379 465 8997</a>
