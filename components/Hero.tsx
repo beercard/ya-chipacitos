@@ -76,7 +76,7 @@ export default function Hero() {
               </div>
 
               {/* Content - No Blur */}
-              <div className="relative z-20 container mx-auto px-4 text-center text-white mt-16 flex flex-col items-center justify-center h-full">
+              <div className="relative z-20 container mx-auto px-4 text-center text-white mt-4 md:mt-16 flex flex-col items-center justify-center h-full">
                 {slide.pretitle && (
                    <motion.div 
                     initial={{ opacity: 0, y: -20 }}

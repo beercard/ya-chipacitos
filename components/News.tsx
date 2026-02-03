@@ -7,6 +7,7 @@ export default function News() {
   const [formData, setFormData] = useState({
     businessName: '',
     contactPhone: '',
+    email: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
@@ -28,7 +29,7 @@ export default function News() {
 
       if (response.ok) {
         setStatus('success');
-        setFormData({ businessName: '', contactPhone: '' });
+        setFormData({ businessName: '', contactPhone: '', email: '' });
         alert('¡Solicitud enviada con éxito! Nos pondremos en contacto pronto.');
       } else {
         setStatus('error');
@@ -129,7 +130,7 @@ export default function News() {
            <div className="bg-brand-black text-white p-8 rounded-xl neobrutal-shadow-lg border-4 border-brand-yellow relative overflow-hidden">
               <div className="relative z-10">
                 <h3 className="text-3xl font-display font-bold mb-6 text-brand-yellow uppercase text-center md:text-left">VENTA CORPORATIVA</h3>
-                <p className="text-lg mb-6 text-center md:text-left">¿Tenés una empresa u oficina? Llevamos el mejor chipá para tus reuniones y eventos.</p>
+                <p className="text-lg mb-6 text-center md:text-left">¿Querés tener en tus góndolas el mejor chipá? Llevá Ya! Chipacitos a tu negocio.</p>
                 <div className="flex items-center justify-center md:justify-start gap-4 text-xl font-bold">
                   <span>📞</span>
                   <a href="tel:+5493794658997" className="hover:text-brand-yellow transition-colors">+54 9 379 465 8997</a>
@@ -149,6 +150,15 @@ export default function News() {
                   onChange={handleInputChange}
                   className="w-full border-2 border-black rounded p-2 font-bold bg-gray-50" 
                   placeholder="Nombre de tu negocio" 
+                  required
+                />
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full border-2 border-black rounded p-2 font-bold bg-gray-50" 
+                  placeholder="Email de contacto" 
                   required
                 />
                 <input 
