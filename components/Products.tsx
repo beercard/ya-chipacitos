@@ -38,7 +38,7 @@ export default function Products() {
     { 
       id: 6, 
       image: '/images/products/Chipáncho.jpeg', 
-      title: 'Chipancho',
+      title: 'Chipapanchos',
       description: 'Edición Limitada para festejar lo que vos quieras'
     },
   ];
