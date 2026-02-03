@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Luckiest_Guy, Gloria_Hallelujah, Quicksand } from "next/font/google";
 import "./globals.css";
 
