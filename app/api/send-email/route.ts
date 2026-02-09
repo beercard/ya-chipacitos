@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     let htmlContent = '';
     let subject = '';
     let recipientEmail = process.env.CONTACT_EMAIL;
-    let attachments = [];
+    const attachments = [];
 
     // Manejo de FormData (para archivos y texto)
     if (contentType.includes('multipart/form-data')) {
@@ -140,7 +140,7 @@ export async function POST(req: Request) {
       businessName = jsonBody.businessName;
       contactPhone = jsonBody.contactPhone;
       email = jsonBody.email;
-      name = jsonBody.name; // En caso de que News.tsx envíe name
+      // name = jsonBody.name; // Eliminado por no usarse en este bloque
 
       if (type === 'Mayorista') {
         recipientEmail = process.env.EMAIL_MAYORISTA || 'yachipacitosmayorista@gmail.com';

@@ -42,9 +42,9 @@ export default function About() {
             <Rocket className="text-black w-10 h-10" />
           </div>
           <h2 className="text-4xl font-display mb-6">Nuestra Misión</h2>
-          <p className="text-xl md:text-2xl font-medium max-w-3xl mx-auto">
-            "En Ya! Chipacitos nos apasiona ofrecer productos auténticos y de alta calidad, elaborados con procesos de mejora continua. Nuestro compromiso es ser parte de tus momentos especiales, llevando el sabor y la tradición chipacera a tu mesa."
-          </p>
+          <p className="text-xl leading-relaxed text-justify mb-8">
+              &quot;En Ya! Chipacitos nos apasiona ofrecer productos auténticos y de alta calidad, elaborados con procesos de mejora continua. Nuestro compromiso es ser parte de tus momentos especiales, llevando el sabor y la tradición chipacera a tu mesa.&quot;
+            </p>
         </div>
 
         {/* Valores */}

@@ -1,5 +1,7 @@
 
-import Link from 'next/link';
+"use client";
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 export default function StickyCTA() {
   return (
