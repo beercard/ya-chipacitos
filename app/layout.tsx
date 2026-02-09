@@ -37,9 +37,10 @@ export const metadata: Metadata = {
     siteName: "Ya! Chipacitos",
     images: [
       {
-        url: "https://yachipacitos.com/images/hero/1.jpg",
+        url: "https://yachipacitos.com/images/products/Chipacitos Clasicos.jpeg",
         width: 1200,
         height: 630,
+        alt: "Chipacitos Clásicos",
       },
     ],
     locale: "es_AR",
