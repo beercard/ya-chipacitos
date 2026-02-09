@@ -4,21 +4,41 @@ export async function POST(req: Request) {
   try {
     const contentType = req.headers.get('content-type') || '';
     
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpPortRaw = process.env.SMTP_PORT;
+    const smtpPort = smtpPortRaw ? Number.parseInt(smtpPortRaw, 10) : Number.NaN;
+    const smtpSecure = process.env.SMTP_SECURE === 'true';
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+
+    if (!smtpHost || !Number.isFinite(smtpPort) || !smtpUser || !smtpPass) {
+      console.error('SMTP config missing/invalid', {
+        hasHost: Boolean(smtpHost),
+        hasPort: Number.isFinite(smtpPort),
+        hasUser: Boolean(smtpUser),
+        hasPass: Boolean(smtpPass),
+      });
+      return new Response(JSON.stringify({ message: 'Configuración SMTP incompleta', code: 'SMTP_CONFIG_MISSING' }), {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+
     // Configuración del Transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT),
-      secure: process.env.SMTP_SECURE === 'true',
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: smtpUser,
+        pass: smtpPass,
       },
     });
 
     let type, businessName, contactPhone, email;
     let htmlContent = '';
     let subject = '';
-    let recipientEmail = process.env.CONTACT_EMAIL;
+    let recipientEmail = process.env.CONTACT_EMAIL || smtpUser;
     const attachments = [];
 
     // Manejo de FormData (para archivos y texto)
@@ -202,7 +222,7 @@ export async function POST(req: Request) {
     }
 
     const mailOptions = {
-      from: `"Ya! Chipacitos Web" <${process.env.SMTP_USER}>`,
+      from: `"Ya! Chipacitos Web" <${smtpUser}>`,
       to: recipientEmail, 
       subject: subject,
       html: htmlContent,
