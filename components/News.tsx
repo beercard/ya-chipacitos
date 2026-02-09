@@ -1,6 +1,6 @@
 "use client";
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
 export default function News() {
@@ -10,6 +10,7 @@ export default function News() {
     email: '',
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -30,7 +31,7 @@ export default function News() {
       if (response.ok) {
         setStatus('success');
         setFormData({ businessName: '', contactPhone: '', email: '' });
-        alert('¡Solicitud enviada con éxito! Nos pondremos en contacto pronto.');
+        setShowModal(true);
       } else {
         setStatus('error');
         alert('Hubo un error al enviar la solicitud. Por favor, intenta nuevamente.');
@@ -40,7 +41,7 @@ export default function News() {
       setStatus('error');
       alert('Hubo un error de conexión. Por favor, verifica tu conexión e intenta nuevamente.');
     } finally {
-      setStatus('idle');
+      if (status !== 'success') setStatus('idle');
     }
   };
 
@@ -182,6 +183,42 @@ export default function News() {
         </div>
 
       </div>
+
+      {/* Success Modal */}
+      <AnimatePresence>
+        {showModal && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="bg-white rounded-xl p-8 max-w-md w-full neobrutal-shadow-lg border-4 border-black text-center relative"
+            >
+              <div className="w-20 h-20 bg-brand-yellow rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-black">
+                <span className="text-4xl">🎉</span>
+              </div>
+              <h3 className="text-3xl font-display font-bold mb-4 uppercase">¡Solicitud Enviada!</h3>
+              <p className="text-lg text-gray-700 mb-8 font-medium">
+                Gracias por contactarnos. Hemos recibido tu solicitud correctamente y nos pondremos en contacto a la brevedad.
+              </p>
+              <button 
+                onClick={() => {
+                  setShowModal(false);
+                  setStatus('idle');
+                }}
+                className="bg-brand-red text-white font-bold py-3 px-8 rounded-full neobrutal-button hover:bg-red-700 transition-colors uppercase text-lg w-full"
+              >
+                ENTENDIDO
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
