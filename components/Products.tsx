@@ -7,37 +7,37 @@ export default function Products() {
   const products = [
     { 
       id: 1, 
-      image: '/images/products/Chipacitos Clasicos.jpeg', 
+      image: '/images/products/chipacitos-clasicos.jpeg', 
       title: 'Chipacitos Clásicos',
       description: 'Ricos y calentitos para todos los días'
     },
     { 
       id: 2, 
-      image: '/images/products/Chipá Saborizado.jpeg', 
+      image: '/images/products/chipa-saborizado.jpeg', 
       title: 'Chipá Saborizado',
       description: 'Los aliados de tus picadas.'
     },
     { 
       id: 3, 
-      image: '/images/products/Chipá XXL.jpeg', 
+      image: '/images/products/chipa-xxl.jpeg', 
       title: 'Chipá XXL',
       description: 'Una explosión de auténtico sabor correntino'
     },
     { 
       id: 4, 
-      image: '/images/products/Chipa Sandwich.jpeg', 
+      image: '/images/products/chipa-sandwich.jpeg', 
       title: 'Chipandwich',
       description: 'La combinación perfecta entre dos grandes'
     },
     { 
       id: 5, 
-      image: '/images/products/Chipánada.jpeg', 
+      image: '/images/products/chipanada.jpeg', 
       title: 'Chipanada',
       description: 'Una Edición Limitada sólo para festejar nuestra Patria'
     },
     { 
       id: 6, 
-      image: '/images/products/Chipáncho.jpeg', 
+      image: '/images/products/chipancho.jpeg', 
       title: 'Chipapanchos',
       description: 'Edición Limitada para festejar lo que vos quieras'
     },
