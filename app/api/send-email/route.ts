@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       },
     });
 
-    let type, businessName, contactPhone, email, name;
+    let type, businessName, contactPhone, email;
     let htmlContent = '';
     let subject = '';
     let recipientEmail = process.env.CONTACT_EMAIL;
