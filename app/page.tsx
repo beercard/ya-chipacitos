@@ -1,4 +1,3 @@
-
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -8,6 +7,9 @@ import News from '@/components/News';
 import Careers from '@/components/Careers';
 import Footer from '@/components/Footer';
 import StickyCTA from '@/components/StickyCTA';
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export default function Home() {
   return (
