@@ -7,7 +7,7 @@ const hostname = process.env.HOSTNAME || "0.0.0.0";
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
-const noStoreValue = "no-store, max-age=0, must-revalidate";
+const noStoreValue = "private, no-cache, no-store, must-revalidate, max-age=0";
 
 app
   .prepare()
@@ -21,6 +21,37 @@ app
       ["/images/products/Chipáncho.jpeg", "/images/products/chipancho.jpeg"],
     ]);
 
+    const applyNoCacheHeaders = (res) => {
+      const originalSetHeader = res.setHeader.bind(res);
+      res.setHeader = (name, value) => {
+        const headerName = String(name).toLowerCase();
+        if (headerName === "cache-control") {
+          originalSetHeader("Cache-Control", noStoreValue);
+          return;
+        }
+        originalSetHeader(name, value);
+      };
+
+      const originalWriteHead = res.writeHead.bind(res);
+      res.writeHead = (...args) => {
+        const headerIndex = args.findIndex((arg) => arg && typeof arg === "object" && !Array.isArray(arg));
+        if (headerIndex !== -1) {
+          args[headerIndex] = { ...args[headerIndex], "Cache-Control": noStoreValue, Pragma: "no-cache", Expires: "0" };
+        } else {
+          res.setHeader("Cache-Control", noStoreValue);
+          res.setHeader("Pragma", "no-cache");
+          res.setHeader("Expires", "0");
+        }
+        return originalWriteHead(...args);
+      };
+
+      res.setHeader("Cache-Control", noStoreValue);
+      res.setHeader("Pragma", "no-cache");
+      res.setHeader("Expires", "0");
+      res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
+      res.setHeader("X-LiteSpeed-Cache", "no-cache");
+    };
+
     const server = http.createServer((req, res) => {
       const url = req.url || "/";
       const pathname = url.split("?")[0] || "/";
@@ -30,13 +61,11 @@ app
           const rawImageUrl = fullUrl.searchParams.get("url");
           if (rawImageUrl) {
             const decodedImageUrl = decodeURIComponent(rawImageUrl);
-            const redirectedImageUrl = legacyProductImageRedirects.get(decodedImageUrl);
-            if (redirectedImageUrl) {
-              fullUrl.searchParams.set("url", redirectedImageUrl);
+            const redirectedImageUrl = legacyProductImageRedirects.get(decodedImageUrl) || decodedImageUrl;
+            if (redirectedImageUrl.startsWith("/")) {
               res.statusCode = 307;
-              res.setHeader("Location", fullUrl.pathname + "?" + fullUrl.searchParams.toString());
-              res.setHeader("Cache-Control", noStoreValue);
-              res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
+              res.setHeader("Location", redirectedImageUrl);
+              applyNoCacheHeaders(res);
               res.end();
               return;
             }
@@ -80,19 +109,9 @@ app
       const shouldDisableCache = !isNextInternal && !isPublicAsset;
 
       if (shouldDisableCache) {
-        const originalSetHeader = res.setHeader.bind(res);
-        res.setHeader = (name, value) => {
-          if (String(name).toLowerCase() === "cache-control") {
-            originalSetHeader("Cache-Control", noStoreValue);
-            return;
-          }
-          originalSetHeader(name, value);
-        };
-        res.setHeader("Cache-Control", noStoreValue);
-        res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
+        applyNoCacheHeaders(res);
       } else if (isApi) {
-        res.setHeader("Cache-Control", noStoreValue);
-        res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
+        applyNoCacheHeaders(res);
       }
 
       handle(req, res);
