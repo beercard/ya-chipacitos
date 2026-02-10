@@ -41,11 +41,17 @@ export default function Locations() {
       image: "/images/locations/5.jpeg" 
     },
     { 
-      name: "ITUIZANGO", 
-      address: "Entre Ríos 2255, Ituzaingó, Corrientes", 
+      name: "ITUZAINGO", 
+      address: "Plaza Centenario, Ituzaingo, Corrientes", 
       phone: "3786 407068", 
-      mapLink: "https://maps.app.goo.gl/rjg8a2K8mxqW63dv9",
+      mapLink: "https://maps.app.goo.gl/QuRL1R3Y4qbf9hkn8",
       image: "/images/locations/6.jpeg" 
+    },
+    { 
+      name: "LA UNIDAD", 
+      address: "Mercado de Sabores - Av. 3 de Abril 57, W3400AIA, Corrientes", 
+      mapLink: "https://maps.app.goo.gl/Za3hEDkThaTGJnkj6",
+      image: "/images/locations/7.jpeg" 
     },
   ];
 
@@ -86,10 +92,12 @@ export default function Locations() {
                   <MapPin size={16} className="text-brand-red mt-1 shrink-0 group-hover:scale-110 transition-transform" />
                   <span className="break-words underline decoration-transparent group-hover:decoration-brand-red transition-all">{loc.address}</span>
                 </a>
-                <a href={`tel:${loc.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-brand-red transition-colors group">
-                  <Phone size={16} className="text-brand-red shrink-0 group-hover:scale-110 transition-transform" />
-                  <span className="underline decoration-transparent group-hover:decoration-brand-red transition-all">{loc.phone}</span>
-                </a>
+                {loc.phone && (
+                  <a href={`tel:${loc.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-brand-red transition-colors group">
+                    <Phone size={16} className="text-brand-red shrink-0 group-hover:scale-110 transition-transform" />
+                    <span className="underline decoration-transparent group-hover:decoration-brand-red transition-all">{loc.phone}</span>
+                  </a>
+                )}
               </div>
               <a 
                 href={loc.mapLink} 
