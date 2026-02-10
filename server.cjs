@@ -7,6 +7,8 @@ const hostname = process.env.HOSTNAME || "0.0.0.0";
 const app = next({ dev: false });
 const handle = app.getRequestHandler();
 
+const noStoreValue = "no-store, max-age=0, must-revalidate";
+
 app
   .prepare()
   .then(() => {
@@ -22,6 +24,27 @@ app
     const server = http.createServer((req, res) => {
       const url = req.url || "/";
       const pathname = url.split("?")[0] || "/";
+      if (pathname === "/_next/image") {
+        try {
+          const fullUrl = new URL(url, `http://${hostname}:${port}`);
+          const rawImageUrl = fullUrl.searchParams.get("url");
+          if (rawImageUrl) {
+            const decodedImageUrl = decodeURIComponent(rawImageUrl);
+            const redirectedImageUrl = legacyProductImageRedirects.get(decodedImageUrl);
+            if (redirectedImageUrl) {
+              fullUrl.searchParams.set("url", redirectedImageUrl);
+              res.statusCode = 307;
+              res.setHeader("Location", fullUrl.pathname + "?" + fullUrl.searchParams.toString());
+              res.setHeader("Cache-Control", noStoreValue);
+              res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
+              res.end();
+              return;
+            }
+          }
+        } catch {
+          // ignore and fall through
+        }
+      }
       const decodedPathname = (() => {
         try {
           return decodeURIComponent(pathname);
@@ -60,14 +83,16 @@ app
         const originalSetHeader = res.setHeader.bind(res);
         res.setHeader = (name, value) => {
           if (String(name).toLowerCase() === "cache-control") {
-            originalSetHeader("Cache-Control", "no-store, max-age=0, must-revalidate");
+            originalSetHeader("Cache-Control", noStoreValue);
             return;
           }
           originalSetHeader(name, value);
         };
-        res.setHeader("Cache-Control", "no-store, max-age=0, must-revalidate");
+        res.setHeader("Cache-Control", noStoreValue);
+        res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
       } else if (isApi) {
-        res.setHeader("Cache-Control", "no-store, max-age=0, must-revalidate");
+        res.setHeader("Cache-Control", noStoreValue);
+        res.setHeader("X-LiteSpeed-Cache-Control", "no-cache");
       }
 
       handle(req, res);
