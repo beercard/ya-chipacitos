@@ -95,7 +95,7 @@ export default function Products() {
             <h3 className="text-3xl md:text-6xl font-display font-bold mb-6 font-outline text-brand-yellow">¿TE QUEDASTE CON GANAS?</h3>
             <p className="text-lg md:text-2xl mb-8 max-w-2xl mx-auto">No esperes más. Hacé tu pedido ahora y recibilo calentito en tu casa.</p>
             <a 
-              href="https://web.pedisy.com/tiendas/ya-chipacitos" 
+              href="https://linktr.ee/yachipacitos" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg md:text-xl px-10 py-4 rounded-full hover:bg-white transition-colors shadow-lg"

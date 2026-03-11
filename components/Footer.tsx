@@ -18,7 +18,7 @@ export default function Footer() {
           >
             <h3 className="text-2xl font-display text-brand-yellow mb-6 font-outline-sm">¡PEDILO AHORA!</h3>
             <a 
-              href="https://web.pedisy.com/tiendas/ya-chipacitos" 
+              href="https://linktr.ee/yachipacitos" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-brand-yellow text-brand-black neobrutal-button font-bold text-lg px-8 py-3 rounded-full hover:bg-white transition-colors shadow-lg"
